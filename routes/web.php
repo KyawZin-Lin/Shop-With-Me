@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Ui\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('ui.home.index');
-});
+Route::get('/',[ HomeController::class,'index']);
 
 
 Route::prefix('admin')->group(function () {
-    Route::resources(['brands'=>BrandController::class]);
+    Route::resources([
+        'brands'=>BrandController::class,
+        'categories'=>CategoryController::class
+
+    ]);
+
 });
 
 

@@ -45,9 +45,9 @@
 
     <!-- Vesitable Shop Start-->
     <div class="container-fluid vesitable py-5">
-        @for ($a=0; $a<= 5; $a++)
+        @foreach ($brands as $brand)
         <div class="container py-5">
-            <h1 class="mb-0">Fresh Organic Vegetables {{$a}}</h1>
+            <h1 class="mb-0"> {{$brand->name}}</h1>
             <div class="owl-carousel vegetable-carousel justify-content-center">
                 @for ($i=1 ; $i <=5;  $i++)
                 <div class="border border-primary rounded position-relative vesitable-item">
@@ -181,7 +181,7 @@
                 </div> --}}
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
     <!-- Vesitable Shop End -->
     <!-- Fruits Shop Start-->
