@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Ui\HomeController;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,28 +18,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[ HomeController::class,'index']);
-
-
-Route::prefix('admin')->group(function () {
-    Route::resources([
-        'brands'=>BrandController::class,
-        'categories'=>CategoryController::class
-
-    ]);
-
+Route::get('/', function () {
+    return view('welcome');
 });
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['admin-auth:Admin', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware('admin-auth:Admin')->prefix('admin')->group(function(){
+    Route::resources([
+        'brands' =>BrandController::class,
+        'categories' => CategoryController::class,
+        'subCategories' => SubCategoryController::class
+    ]);
 });
 
 require __DIR__.'/auth.php';

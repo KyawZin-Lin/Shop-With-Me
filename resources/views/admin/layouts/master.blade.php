@@ -19,7 +19,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="../admin/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{asset('admin/assets/img/favicon.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('admin/assets/img/favicon.png') }}">
     <title>
         Corporate UI by Creative Tim
     </title>
@@ -28,13 +28,18 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700"
         rel="stylesheet" />
     <!-- Nucleo Icons -->
-    <link href="{{asset('admin/assets/css/nucleo-icons.css" rel="stylesheet')}}" />
-    <link href="{{asset('admin/assets/css/nucleo-svg.css" rel="stylesheet')}}" />
+    <link href="{{ asset('admin/assets/css/nucleo-icons.css" rel="stylesheet') }}" />
+    <link href="{{ asset('admin/assets/css/nucleo-svg.css" rel="stylesheet') }}" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/349ee9c857.js" crossorigin="anonymous"></script>
-    <link href="{{asset('admin/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+    <link href="{{ asset('admin/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="{{asset('admin/assets/css/corporate-ui-dashboard.css?v=1.0.0')}}" rel="stylesheet" />
+    <link id="pagestyle" href="{{ asset('admin/assets/css/corporate-ui-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -296,10 +301,10 @@
         </div>
     </div>
     <!--   Core JS Files   -->
-    <script src="{{asset('admin/assets/js/core/popper.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/core/bootstrap.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/core/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -312,7 +317,7 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{asset('admin/assets/js/corporate-ui-dashboard.min.js?v=1.0.0')}}"></script>
+    <script src="{{ asset('admin/assets/js/corporate-ui-dashboard.min.js?v=1.0.0') }}"></script>
 </body>
 
 </html>
