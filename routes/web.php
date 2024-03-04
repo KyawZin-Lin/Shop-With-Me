@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Ui\HomeController;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,7 +36,8 @@ Route::middleware('admin-auth:Admin')->prefix('admin')->group(function(){
     Route::resources([
         'brands' =>BrandController::class,
         'categories' => CategoryController::class,
-        'subCategories' => SubCategoryController::class
+        'subCategories' => SubCategoryController::class,
+        'products' => ProductController::class
     ]);
 });
 
